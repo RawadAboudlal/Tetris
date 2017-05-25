@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Insets?>
+
+<?import com.rawad.tetris.client.gui.PauseScreen?>
+<?import com.rawad.tetris.client.gui.GameOverScreen?>
+<?import com.rawad.tetris.client.gui.CountDownScreen?>
+<?import com.rawad.tetris.client.gui.FlashingImageView?>
+<?import javafx.scene.image.ImageView?>
+
+<fx:root xmlns:fx="http://javafx.com/fxml/1" type="StackPane">
+	
+	<children>
+		
+		<ImageView fx:id="backgroundImageView" preserveRatio="true" />
+		
+		<AnchorPane>
+			
+			<children>
+				<VBox styleClass="gameContainer" alignment="CENTER" AnchorPane.leftAnchor="15" AnchorPane.topAnchor="15">
+					<Label fx:id="holdLabel" styleClass="infoLabel" text="Hold" />
+					<Canvas fx:id="holdCanvas" width="100" height="100">
+						<VBox.margin>
+							<Insets top="5" bottom="5" right = "5" left="5" />
+						</VBox.margin>
+					</Canvas>
+				</VBox>
+				
+				<VBox styleClass="gameContainer" alignment="CENTER" AnchorPane.leftAnchor="15" AnchorPane.bottomAnchor="15">
+					<Label fx:id="scoreLabel" styleClass="infoLabel" text="Score" />
+					<Label fx:id="scoreValueLabel" styleClass="valueLabel" text="0" maxWidth="Infinity" />
+					<Label fx:id="levelLabel" styleClass="infoLabel" text="Level" />
+					<Label fx:id="levelValueLabel" styleClass="valueLabel" text="1" maxWidth="Infinity" />
+					<Label fx:id="linesLabel" styleClass="infoLabel" text="Lines" />
+					<Label fx:id="linesValueLabel" styleClass="valueLabel" text="0" maxWidth="Infinity" />
+				</VBox>
+				
+				<VBox styleClass="gameContainer" alignment="CENTER" AnchorPane.rightAnchor="15" AnchorPane.topAnchor="15">
+					<Label fx:id="nextLabel" styleClass="infoLabel" text="Next" />
+					<Canvas fx:id="firstNextCanvas" width="100" height="100">
+						<VBox.margin>
+							<Insets top="5" bottom="5" right = "5" left="5" />
+						</VBox.margin>
+					</Canvas>
+					<Canvas fx:id="secondNextCanvas" width="100" height="100">
+						<VBox.margin>
+							<Insets top="5" bottom="5" right = "5" left="5" />
+						</VBox.margin>
+					</Canvas>
+					<Canvas fx:id="thirdNextCanvas" width="100" height="100">
+						<VBox.margin>
+							<Insets top="5" bottom="5" right = "5" left="5" />
+						</VBox.margin>
+					</Canvas>
+					
+				</VBox>
+				
+				<VBox styleClass="gameContainer" alignment="CENTER" AnchorPane.rightAnchor="15" AnchorPane.bottomAnchor="15">
+					<FlashingImageView  fx:id="tSpinImageView" preserveRatio="true" />
+					<Label fx:id="lineClearStreakLabel" styleClass="infoLabel" text="Line Clear Streak" />
+					<Label fx:id="lineClearStreakValueLabel" styleClass="valueLabel" text="0" maxWidth="Infinity" />
+				</VBox>
+				
+			</children>
+			
+		</AnchorPane>
+		
+		<Canvas fx:id="gameBoardCanvas" width="250" height="480" />
+		
+		<PauseScreen fx:id="pauseScreen" visible="false" />
+		<GameOverScreen fx:id="gameOverScreen" visible="false" />
+		<CountDownScreen fx:id="countDownScreen" visible="false" />
+		
+	</children>
+	
+</fx:root>

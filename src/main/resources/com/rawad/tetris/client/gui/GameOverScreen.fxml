@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<fx:root xmlns:fx="http://javafx.com/fxml/1" type="GridPane">
+	
+	<columnConstraints>
+		<ColumnConstraints percentWidth="40" />
+		<ColumnConstraints fillWidth="true" halignment="CENTER" percentWidth="20" />
+		<ColumnConstraints percentWidth="40" />
+	</columnConstraints>
+	
+	<rowConstraints>
+		<RowConstraints percentHeight="37.5" />
+		<RowConstraints fillHeight="true" percentHeight="10" valignment="CENTER" />
+		<RowConstraints percentHeight="5" />
+		<RowConstraints fillHeight="true" percentHeight="10" valignment="CENTER" />
+		<RowConstraints percentHeight="37.5" />
+	</rowConstraints>
+	
+	<children>
+		<Button fx:id="playAgainButton" text="Play Again!" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+		<Button fx:id="exitButton" text="Exit to Menu" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+	</children>
+	
+</fx:root>

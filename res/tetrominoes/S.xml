@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE Entity>
+<Entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <comp xsi:type="idComponent">
+        <id>S</id>
+    </comp>
+    <comp xsi:type="tilesComponent">
+        <tiles>
+            <x>0</x>
+            <y>1</y>
+        </tiles>
+        <tiles>
+            <x>1</x>
+            <y>1</y>
+        </tiles>
+        <tiles>
+            <x>1</x>
+            <y>0</y>
+        </tiles>
+        <tiles>
+            <x>2</x>
+            <y>0</y>
+        </tiles>
+    </comp>
+    <comp xsi:type="renderingComponent">
+        <color>8388863</color>
+    </comp>
+    <comp xsi:type="rotationComponent">
+        <centerX>1.0</centerX>
+        <centerY>1.0</centerY>
+    </comp>
+    <comp xsi:type="translateComponent">
+        <x>0</x>
+        <y>0</y>
+    </comp>
+</Entity>

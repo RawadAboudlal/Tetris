@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+
+<fx:root xmlns:fx="http://javafx.com/fxml/1" type="VBox" alignment="CENTER" maxWidth="Infinity" maxHeight="Infinity" spacing="50">
+	
+	<children>
+		<Label fx:id="timeLeftLabel" styleClass="bigLabel" text="0" textFill="WHITE" />
+		<!-- <Label text="Press Esc to Pause." textFill="WHITE" /> As it turns out, we don't need this. -->
+	</children>
+	
+</fx:root>
+

@@ -1,0 +1,41 @@
+* {
+	
+	-fx-font: bold 2em "fantasy";
+	
+}
+
+StackPane {
+	-fx-background-color: linear-gradient(#606060FF, gray);
+}
+
+PauseScreen, GameOverScreen, CountDownScreen {
+	-fx-background-color: #32323264;
+}
+
+.gameContainer {
+	-fx-background-color: linear-gradient(black, white);
+	-fx-background-radius: 10;
+	-fx-padding: 10;
+	-fx-border-width: 5;
+	-fx-effect: dropshadow(one-pass-box, black, 5, 0, 0, 0);
+}
+
+.titleLabel {
+	-fx-effect: dropshadow(one-pass-box, white, 5, 1, 0, 0);
+}
+
+.infoLabel {
+	-fx-text-fill: white;
+	-fx-effect: dropshadow(one-pass-box, black, 5, 0, 3, 3);
+}
+
+.valueLabel {
+	-fx-alignment: center;
+	-fx-text-fill: white;
+	-fx-background-color: rgb(50, 50, 50);
+	-fx-background-radius: 5;
+}
+
+.bigLabel {
+	-fx-font-size: 10em;
+}
