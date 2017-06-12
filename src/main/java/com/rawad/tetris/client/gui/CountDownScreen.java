@@ -1,7 +1,7 @@
 package com.rawad.tetris.client.gui;
 
+import com.rawad.jfxengine.gui.GuiLoader;
 import com.rawad.jfxengine.gui.Hideable;
-import com.rawad.jfxengine.loader.GuiLoader;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
