@@ -28,6 +28,12 @@ public enum EventType {
 	
 	LEVEL_INCREASE,
 	
-	GAME_OVER,;
+	FAILED_MOVE,
+	FAILED_ROTATE,
+	
+	GROUND_HIT,
+	
+	GAME_OVER,
+	;
 	
 }

@@ -119,7 +119,7 @@ public class GameState extends State implements Listener {
 		eventManager.registerListener(EventType.TETROMINO_HOLD, this);
 		eventManager.registerListener(EventType.LEVEL_INCREASE, this);
 		eventManager.registerListener(EventType.LINE_CLEAR_STREAK_UPDATE, this);
-		gameEngine.getEventManager().registerListener(EventType.T_SPIN, this);
+		eventManager.registerListener(EventType.T_SPIN, this);
 		
 		scoreUpdateHandler = new ScoreUpdateHandler(gameEngine.getEventManager(), gameModel);
 		

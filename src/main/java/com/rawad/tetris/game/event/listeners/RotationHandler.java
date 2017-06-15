@@ -8,6 +8,7 @@ import com.rawad.tetris.entity.MovementComponent;
 import com.rawad.tetris.entity.movement.Movement;
 import com.rawad.tetris.game.GameModel;
 import com.rawad.tetris.game.event.EventType;
+import com.rawad.tetris.game.event.FailedRotateEvent;
 import com.rawad.tetris.game.event.RotateEvent;
 import com.rawad.tetris.util.RotationCalculator;
 
@@ -49,13 +50,20 @@ public class RotationHandler implements Listener {
 		
 		Entity activeTetromino = gameModel.getActiveTetromino();
 		
-		if(rotateDirection != 0 && RotationCalculator.rotateTetromino(gameModel, activeTetromino, rotateDirection)) {
+		if(rotateDirection != 0) {
 			
-			MovementComponent movementComp = activeTetromino.getComponent(MovementComponent.class);
+			if(RotationCalculator.rotateTetromino(gameModel, activeTetromino, rotateDirection)) {
+				
+				MovementComponent movementComp = activeTetromino.getComponent(MovementComponent.class);
+				
+				movementComp.setPrevMovement(Movement.ROTATE);
+				
+				eventManager.submitEvent(new RotateEvent());
+				
+			} else {
+				eventManager.submitEvent(new FailedRotateEvent());
+			}
 			
-			movementComp.setPrevMovement(Movement.ROTATE);
-			
-			eventManager.submitEvent(new RotateEvent());
 		}
 		
 	}

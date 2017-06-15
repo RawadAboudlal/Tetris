@@ -1,6 +1,7 @@
 package com.rawad.tetris.loader;
 
 import java.io.BufferedReader;
+import java.io.File;
 
 import com.rawad.gamehelpers.fileparser.xml.EntityFileParser;
 import com.rawad.gamehelpers.game.entity.Blueprint;
@@ -20,9 +21,11 @@ public class Loader extends AbstractLoader {
 	private static final String FOLDER_RES = "res";
 	private static final String FOLDER_ENTITY = "tetrominoes";
 	private static final String FOLDER_TEXTURES = "textures";
+	private static final String FOLDER_SOUND_EFFECTS = "sound";
 	
 	private static final String EXTENSION_ENTITY_BLUEPRINT_FILE = "xml";
 	private static final String EXTENSION_TEXTURE = "png";
+	private static final String EXTENSION_SOUND_EFFECT = "wav";
 	
 	private static final String PROTOCOL_FILE = "file:";
 	
@@ -72,5 +75,8 @@ public class Loader extends AbstractLoader {
 		
 	}
 	
+	public File getSoundEffectFile(String soundEffectName) {
+		return new File(this.getFilePathFromParts(EXTENSION_SOUND_EFFECT, FOLDER_SOUND_EFFECTS, soundEffectName));
+	}
 	
 }

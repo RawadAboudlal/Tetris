@@ -10,6 +10,7 @@ import com.rawad.tetris.entity.TranslateComponent;
 import com.rawad.tetris.entity.movement.Movement;
 import com.rawad.tetris.game.GameModel;
 import com.rawad.tetris.game.event.EventType;
+import com.rawad.tetris.game.event.FailedMoveEvent;
 import com.rawad.tetris.game.event.FallingEvent;
 import com.rawad.tetris.game.event.MoveEvent;
 import com.rawad.tetris.game.event.MoveRequestEvent;
@@ -86,14 +87,18 @@ public class MovementHandler implements Listener {
 						movementComp.setPrevMovement(Movement.FALL);
 					}
 					
-					eventManager.submitEvent(new FallingEvent(dy));
+					eventManager.submitEvent(new FallingEvent(dy, movementComp.getPrevMovement()));
 					
 				}
 				
 			} else {
 				
-				// For when tetrmino is blocked after spawning (columns cover entire field).
-				eventManager.submitEvent(new FallingEvent(0));
+				if(dx != 0) {
+					eventManager.submitEvent(new FailedMoveEvent());
+				}
+				
+				// For when tetrmino is blocked after spawning (columns cover entire field) so it can start countdown.
+				eventManager.submitEvent(new FallingEvent(0, Movement.FALL));
 				
 			}
 			

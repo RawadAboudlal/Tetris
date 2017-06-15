@@ -1,5 +1,6 @@
 package com.rawad.tetris.client;
 
+import com.rawad.gamehelpers.client.sound.SoundEffectsManager;
 import com.rawad.gamehelpers.client.states.StateChangeRequest;
 import com.rawad.gamehelpers.fileparser.event.FileParseEventType;
 import com.rawad.gamehelpers.fileparser.xml.EntityFileParser;
@@ -7,6 +8,7 @@ import com.rawad.gamehelpers.game.Game;
 import com.rawad.jfxengine.client.AbstractClient;
 import com.rawad.jfxengine.gui.Root;
 import com.rawad.tetris.client.input.InputAction;
+import com.rawad.tetris.client.sound.SoundEffect;
 import com.rawad.tetris.client.states.GameState;
 import com.rawad.tetris.client.states.MenuState;
 import com.rawad.tetris.fileparser.event.FileParseEventHandler;
@@ -92,6 +94,12 @@ public class Client extends AbstractClient {
 			stage.getIcons().add(logo);
 		});
 		
+		SoundEffectsManager.initialize();
+		
+		for(SoundEffect soundEffect: SoundEffect.values()) {
+			SoundEffectsManager.loadSoundEffect(loader.getSoundEffectFile(soundEffect.getName()), soundEffect);
+		}
+		
 	}
 	
 	/**
@@ -138,6 +146,8 @@ public class Client extends AbstractClient {
 	@Override
 	public void terminate() {
 		super.terminate();
+		
+		SoundEffectsManager.terminate();
 		
 		Platform.runLater(() -> stage.close());
 		

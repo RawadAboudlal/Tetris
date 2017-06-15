@@ -4,11 +4,12 @@ import com.rawad.gamehelpers.game.GameEngine;
 import com.rawad.gamehelpers.game.event.EventManager;
 import com.rawad.tetris.game.GameModel;
 import com.rawad.tetris.game.event.EventType;
-import com.rawad.tetris.game.event.listeners.LockHandler;
+import com.rawad.tetris.game.event.listeners.LineClearCheckHandler;
 import com.rawad.tetris.game.event.listeners.LineClearHandler;
+import com.rawad.tetris.game.event.listeners.LockHandler;
 import com.rawad.tetris.game.event.listeners.MovementHandler;
 import com.rawad.tetris.game.event.listeners.RotationHandler;
-import com.rawad.tetris.game.event.listeners.LineClearCheckHandler;
+import com.rawad.tetris.game.event.listeners.SoundHandler;
 import com.rawad.tetris.game.event.listeners.TetrominoHandler;
 
 /**
@@ -26,9 +27,10 @@ public final class GameListeners {
 		
 		EventManager eventManager = gameEngine.getEventManager();
 		
-		LockHandler lockHandler = new LockHandler(gameModel);
+		LockHandler lockHandler = new LockHandler(eventManager, gameModel);
 		TetrominoHandler tetrominoHandler = new TetrominoHandler(gameEngine, gameModel);
 		RotationHandler rotationHandler = new RotationHandler(eventManager, gameModel);
+		SoundHandler soundHandler = new SoundHandler();
 		
 		// With all this functionality (which is super clean), TetrominoGenerator should be named something else...
 		eventManager.registerListener(EventType.TETROMINO_HOLD, tetrominoHandler);
@@ -48,6 +50,16 @@ public final class GameListeners {
 		eventManager.registerListener(EventType.TETROMINO_MOVE_REQUEST, new MovementHandler(eventManager, gameModel));
 		eventManager.registerListener(EventType.TETROMINO_PLACE, new LineClearCheckHandler(eventManager, gameModel));
 		eventManager.registerListener(EventType.LINE_CLEAR, new LineClearHandler(gameModel));
+		
+		eventManager.registerListener(EventType.LEVEL_INCREASE, soundHandler);
+		eventManager.registerListener(EventType.TETROMINO_FALL, soundHandler);
+		eventManager.registerListener(EventType.TETROMINO_HARD_DROP, soundHandler);
+		eventManager.registerListener(EventType.TETROMINO_PLACE, soundHandler);
+		eventManager.registerListener(EventType.TETROMINO_MOVE, soundHandler);
+		eventManager.registerListener(EventType.FAILED_ROTATE, soundHandler);
+		eventManager.registerListener(EventType.TETROMINO_ROTATE, soundHandler);
+		eventManager.registerListener(EventType.GROUND_HIT, soundHandler);
+		eventManager.registerListener(EventType.FAILED_MOVE, soundHandler);
 		
 	}
 	
