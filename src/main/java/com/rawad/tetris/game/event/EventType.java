@@ -21,6 +21,8 @@ public enum EventType {
 	TETROMINO_PLACE_REQUEST,// Called to indicate that a tetromino should be placed.
 	GENERATE_TETROMINOES,
 	
+	TETROMINO_HOLD_SUCCESS,
+	
 	T_SPIN,
 	
 	LINE_CLEAR,

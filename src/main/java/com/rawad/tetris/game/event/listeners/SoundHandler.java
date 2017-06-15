@@ -34,7 +34,7 @@ public class SoundHandler implements Listener {
 			
 		} else if(ev.getEventType() == EventType.TETROMINO_HARD_DROP) {
 			SoundEffectsManager.playSoundEffect(SoundEffect.PIECE_HARD_DROP);
-		} else if(ev.getEventType() == EventType.TETROMINO_HOLD) {
+		} else if(ev.getEventType() == EventType.TETROMINO_HOLD_SUCCESS) {
 			SoundEffectsManager.playSoundEffect(SoundEffect.PIECE_HOLD);
 		} else if(ev.getEventType() == EventType.TETROMINO_PLACE) {
 			SoundEffectsManager.playSoundEffect(SoundEffect.PIECE_LOCKDOWN);

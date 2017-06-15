@@ -16,6 +16,7 @@ import com.rawad.tetris.game.event.EventType;
 import com.rawad.tetris.game.event.GameOverEvent;
 import com.rawad.tetris.game.event.GenerateTetrominoesEvent;
 import com.rawad.tetris.game.event.HardDropEvent;
+import com.rawad.tetris.game.event.HoldSuccessEvent;
 import com.rawad.tetris.game.event.PlaceEvent;
 import com.rawad.tetris.game.event.PlaceRequestEvent;
 import com.rawad.tetris.game.tiles.Tile;
@@ -113,6 +114,8 @@ public class TetrominoHandler implements Listener {
 			gameModel.setHoldTetromino(activeTetromino);
 			
 			gameModel.setHold(false);
+			
+			eventManager.submitEvent(new HoldSuccessEvent());
 			
 		} else if(ev.getEventType() == EventType.TETROMINO_HARD_DROP_REQUEST) {
 			

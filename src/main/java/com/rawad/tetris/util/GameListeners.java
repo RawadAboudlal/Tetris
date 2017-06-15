@@ -54,6 +54,7 @@ public final class GameListeners {
 		eventManager.registerListener(EventType.LEVEL_INCREASE, soundHandler);
 		eventManager.registerListener(EventType.TETROMINO_FALL, soundHandler);
 		eventManager.registerListener(EventType.TETROMINO_HARD_DROP, soundHandler);
+		eventManager.registerListener(EventType.TETROMINO_HOLD_SUCCESS, soundHandler);
 		eventManager.registerListener(EventType.TETROMINO_PLACE, soundHandler);
 		eventManager.registerListener(EventType.TETROMINO_MOVE, soundHandler);
 		eventManager.registerListener(EventType.FAILED_ROTATE, soundHandler);
