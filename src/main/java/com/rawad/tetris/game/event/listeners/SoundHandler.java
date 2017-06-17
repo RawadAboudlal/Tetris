@@ -7,6 +7,7 @@ import com.rawad.tetris.client.sound.SoundEffect;
 import com.rawad.tetris.entity.movement.Movement;
 import com.rawad.tetris.game.event.EventType;
 import com.rawad.tetris.game.event.FallingEvent;
+import com.rawad.tetris.game.event.LineClearEvent;
 
 /**
  * @author Rawad
@@ -22,6 +23,18 @@ public class SoundHandler implements Listener {
 		
 		if(ev.getEventType() == EventType.LEVEL_INCREASE) {
 			SoundEffectsManager.playSoundEffect(SoundEffect.LEVEL_UP);
+		} else if(ev.getEventType() == EventType.LINE_CLEAR) {
+			
+			LineClearEvent lineClearEvent = (LineClearEvent) ev;
+			
+			switch(lineClearEvent.getFullRows().length) {
+			
+			case 1:
+				SoundEffectsManager.playSoundEffect(SoundEffect.LINE_CLEAR_SINGLE);
+				break;
+			
+			}
+			
 		} else if(ev.getEventType() == EventType.TETROMINO_FALL) {
 			
 			FallingEvent fallingEvent = (FallingEvent) ev;

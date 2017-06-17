@@ -9,6 +9,8 @@ public enum SoundEffect {
 	
 	LEVEL_UP("LevelUp"),
 	
+	LINE_CLEAR_SINGLE("LineClearSingle"),
+	
 	PIECE_FALL("PieceFall"),
 	PIECE_HARD_DROP("PieceHardDrop"),
 	PIECE_HOLD("PieceHold"),

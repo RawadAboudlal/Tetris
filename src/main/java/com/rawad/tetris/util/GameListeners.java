@@ -52,6 +52,7 @@ public final class GameListeners {
 		eventManager.registerListener(EventType.LINE_CLEAR, new LineClearHandler(gameModel));
 		
 		eventManager.registerListener(EventType.LEVEL_INCREASE, soundHandler);
+		eventManager.registerListener(EventType.LINE_CLEAR, soundHandler);
 		eventManager.registerListener(EventType.TETROMINO_FALL, soundHandler);
 		eventManager.registerListener(EventType.TETROMINO_HARD_DROP, soundHandler);
 		eventManager.registerListener(EventType.TETROMINO_HOLD_SUCCESS, soundHandler);
